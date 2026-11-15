@@ -1,0 +1,23 @@
+{
+  "name": "VAHMITRA - Smart Bus Tracking & Management System",
+  "short_name": "VAHMITRA",
+  "description": "SRM University AP Smart Bus Tracking & Management System",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#142B45",
+  "theme_color": "#142B45",
+  "icons": [
+    {
+      "src": "/images/branding/vahmitra-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/branding/vahmitra-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

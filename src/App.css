@@ -1,0 +1,516 @@
+.page {
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 7%;
+  color: #fff;
+  background: #102d46;
+}
+
+.campus-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgba(8, 27, 43, .88), rgba(8, 27, 43, .57) 48%, rgba(8, 27, 43, .78)),
+    linear-gradient(0deg, rgba(8, 27, 43, .55), rgba(8, 27, 43, .12)),
+    url('/images/srm-campus-aerial-1.jpeg') center 48% / cover no-repeat;
+  transform: scale(1.025);
+  animation: campusReveal 1.2s ease both;
+}
+
+.header {
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.srm-logo {
+  width: 155px;
+  max-height: 50px;
+  object-fit: contain;
+  background: #f3f0e7;
+  border-radius: 6px;
+  padding: 4px 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+}
+
+.vahmitra-header-logo {
+  height: 50px;
+  width: auto;
+  max-width: 290px;
+  object-fit: contain;
+  background: #f3f0e7;
+  border-radius: 6px;
+  padding: 5px 12px;
+  border: 1px solid rgba(120, 132, 59, 0.28);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vahmitra-header-logo:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+}
+
+.header-divider {
+  height: 40px;
+  width: 1px;
+  background: rgba(255, 255, 255, .35);
+}
+
+.header-tag {
+  color: #e0dfc2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+}
+
+.main-content {
+  width: min(1180px, 100%);
+  flex: 1;
+  margin: 0 auto;
+  padding: 55px 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(390px, 470px);
+  align-items: center;
+  gap: clamp(35px, 7vw, 100px);
+}
+
+.hero-content {
+  max-width: 540px;
+  padding: 20px 0;
+  animation: slideIn 850ms ease both;
+}
+
+.hero-bus {
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 30px;
+  border: 1px solid rgba(218, 222, 177, .5);
+  border-radius: 20px;
+  color: #e0dfb2;
+  background: rgba(255, 255, 255, .07);
+  box-shadow: 0 0 28px rgba(193, 202, 113, .12);
+}
+
+.hero-bus svg,
+.hero-bus-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.hero-kicker,
+.card-eyebrow {
+  color: #d6d9a4;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.hero-content h1 {
+  margin-top: 10px;
+  font-size: clamp(34px, 4.5vw, 58px);
+  letter-spacing: 5px;
+  font-weight: 800;
+}
+
+.hero-content h2 {
+  margin-top: 22px;
+  color: #fff;
+  font-size: clamp(30px, 3.7vw, 48px);
+  line-height: 1.2;
+  letter-spacing: -1.8px;
+}
+
+.hero-content h2 span {
+  color: #c4cc80;
+}
+
+.hero-description {
+  max-width: 390px;
+  margin-top: 22px;
+  color: rgba(255, 255, 255, .78);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.hero-line {
+  width: 65px;
+  height: 3px;
+  margin-top: 30px;
+  border-radius: 5px;
+  background: #9aa653;
+}
+
+.hero-caption {
+  margin-top: 13px;
+  color: rgba(255, 255, 255, .68);
+  font-size: 9px;
+  letter-spacing: 1.6px;
+}
+
+.login-card {
+  position: relative;
+  width: 100%;
+  padding: 39px 36px 25px;
+  overflow: hidden;
+  border: 1px solid rgba(198, 204, 142, .7);
+  border-radius: 18px;
+  background: rgba(250, 249, 243, .97);
+  color: #102d46;
+  box-shadow: 0 18px 70px rgba(0, 0, 0, .3);
+  animation: cardAppear 850ms cubic-bezier(.2, .8, .2, 1) both,
+    cardGlow 4s ease-in-out 1s infinite;
+}
+
+.login-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(120, 132, 59, .15);
+}
+
+.card-top h2 {
+  margin-top: 12px;
+  color: #102d46;
+  font-size: 27px;
+  letter-spacing: -.8px;
+}
+
+.card-top p {
+  margin-top: 8px;
+  color: #778078;
+  font-size: 13px;
+}
+
+.role-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+  margin: 29px 0 28px;
+  padding: 5px;
+  border: 1px solid #e4e2d7;
+  border-radius: 10px;
+  background: #eeede5;
+}
+
+.role {
+  min-height: 43px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: #687168;
+  font-size: 12px;
+  font-weight: 700;
+  transition: color .25s, background .25s, box-shadow .25s, transform .25s;
+}
+
+.role:hover {
+  color: #102d46;
+  background: rgba(255, 255, 255, .7);
+}
+
+.role.active {
+  color: #fff;
+  border-color: #a4ad63;
+  background: #78843b;
+  box-shadow: 0 0 0 2px rgba(120, 132, 59, .18),
+    0 0 17px rgba(120, 132, 59, .45);
+  transform: translateY(-1px);
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 9px;
+  color: #263d4d;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.login-form>input,
+.password-field input {
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #d9ded7;
+  border-radius: 7px;
+  outline: none;
+  background: #fff;
+  color: #102d46;
+  font-size: 13px;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.login-form input::placeholder {
+  color: #a0aaa4;
+}
+
+.login-form input:focus {
+  border-color: #87944b;
+  box-shadow: 0 0 0 3px rgba(120, 132, 59, .14);
+}
+
+.password-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 21px;
+}
+
+.password-heading label {
+  margin-bottom: 9px;
+}
+
+.forgot-link,
+.password-field button {
+  border: 0;
+  background: transparent;
+  color: #78843b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.forgot-link {
+  margin-bottom: 9px;
+}
+
+.password-field {
+  position: relative;
+}
+
+.password-field input {
+  padding-right: 65px;
+}
+
+.password-field button {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+}
+
+.submit-button {
+  width: 100%;
+  min-height: 49px;
+  margin-top: 25px;
+  padding: 0 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  border: 1px solid #243f34;
+  border-radius: 8px;
+  background: #102d46;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .25s, box-shadow .25s, transform .25s;
+}
+
+.submit-button span {
+  font-size: 20px;
+}
+
+.submit-button:hover {
+  background: #78843b;
+  box-shadow: 0 0 20px rgba(120, 132, 59, .35);
+  transform: translateY(-2px);
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 23px;
+  color: #828b80;
+  font-size: 10px;
+}
+
+.secure-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #78843b;
+  box-shadow: 0 0 8px rgba(120, 132, 59, .6);
+}
+
+.footer {
+  min-height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, .2);
+  color: rgba(255, 255, 255, .7);
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+@keyframes cardGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 18px 70px rgba(0, 0, 0, .3),
+      0 0 8px rgba(192, 202, 113, .12);
+  }
+
+  50% {
+    box-shadow: 0 18px 70px rgba(0, 0, 0, .3),
+      0 0 23px rgba(192, 202, 113, .3);
+  }
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes campusReveal {
+  from {
+    opacity: .5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 850px) {
+  .page {
+    padding: 0 5%;
+  }
+
+  .main-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 35px 0;
+  }
+
+  .hero-content {
+    max-width: 600px;
+    padding: 10px 0;
+  }
+
+  .hero-bus {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 18px;
+  }
+
+  .hero-bus svg,
+  .hero-bus-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .hero-content h2 {
+    font-size: 32px;
+  }
+
+  .login-card {
+    max-width: 510px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .header {
+    min-height: 75px;
+  }
+
+  .header-brand {
+    gap: 10px;
+  }
+
+  .srm-logo {
+    width: 105px;
+    max-height: 38px;
+    padding: 3px 6px;
+  }
+
+  .vahmitra-header-logo {
+    height: 38px;
+    max-width: 175px;
+    padding: 3px 8px;
+  }
+
+  .header-divider {
+    height: 28px;
+  }
+
+  .header-tag {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 35px;
+  }
+
+  .hero-content h2 {
+    font-size: 29px;
+  }
+
+  .login-card {
+    padding: 29px 20px 22px;
+  }
+
+  .card-top h2 {
+    font-size: 23px;
+  }
+
+  .role {
+    font-size: 10px;
+  }
+
+  .footer {
+    gap: 10px;
+    font-size: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
